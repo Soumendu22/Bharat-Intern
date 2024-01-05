@@ -5,7 +5,7 @@ npm init
 npm i express
 npm i mongoose
 npm i portkill
-npmi i node-notifier
+npm i node-notifier
 npm i sha56
 npm i body-parser
 npm i nodemon
