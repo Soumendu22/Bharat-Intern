@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --bg-color: #ffbe0b;
+  --text-color: #1d1f27;
+  --main-color: #fb5607;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#fb5607, #73d2e4, pink, rgb(232, 50, 50));
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+h3,
+header,
+ul {
+  margin-bottom: 0.5rem;
+}
+section > h3 {
+  text-align: center;
+}
+
+main {
+  max-width: 400px;
+  margin: 1rem auto;
+  background-color: #73d2e4;
+  padding: 1rem;
+  box-shadow: 22px 22px 52px #5a5a5a, -22px -22px 52px #ffffff;
+  border: 2px dashed black;
+  border-radius: 20px;
+}
+
+header {
+  background-color: #3a86ff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid black;
+}
+
+header div {
+  padding: 5px;
+}
+
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+header div:nth-child(n + 2) {
+  flex-basis: 50%;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+header h5 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+form input:not(#type),
+form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 42px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  outline: none;
+}
+form button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.clear {
+  margin-left: 120px;
+  width: 125px;
+}
+form label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form div:nth-child(-n + 2) {
+  flex-basis: 100%;
+}
+
+form div:nth-child(n + 3) {
+  flex-basis: calc(50% - 5px);
+}
+
+input#type {
+  /* appearance: none; */
+  position: absolute;
+  margin-top: 5px;
+}
+input[type="radio"],
+#money {
+  margin-left: 50px;
+}
+b {
+  margin-bottom: 5px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #caf0f8;
+  border-radius: 5px;
+  position: relative;
+}
+
+.option span {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.option::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  bottom: 5px;
+  right: 0;
+  background-color: #3a86ff;
+  border: 2px dashed black;
+  width: 170px;
+  transform: translateX(5px);
+  border-radius: inherit;
+  /* box-shadow: 18px 18px 36px #aaaaaa, -18px -18px 36px #ffffff; */
+  transition: all 500ms;
+}
+
+input#type:checked ~ .option::before {
+  left: 50%;
+}
+
+ul {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+ul li:hover {
+  background: rgba(5, 109, 195, 0.567);
+}
+
+.name {
+  flex: 1;
+}
+
+.name h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.name p {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.amount {
+  font-weight: 600;
+  /* flex: 1; */
+}
+#amt {
+  width: 300px;
+}
+.amount.income {
+  color: rgb(0, 208, 104);
+}
+
+.amount.expense {
+  color: rgb(200, 43, 43);
+}
+
+.action {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f00;
+  color: #fff;
+  height: 100%;
+  width: 50px;
+  display: grid;
+  place-items: center;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 300ms;
+}
+
+ul li:hover .action {
+  transform: scaleX(1);
+}
+
+.action svg {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+#status {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.flex {
+  display: flex;
+  gap: 50px;
+  width: 100px;
+}

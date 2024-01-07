@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker - Soumendu</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
+
+    <main>
+      <header>
+        <div>
+          <h5>Total Balance</h5>
+          <span id="balance">0.00</span>
+        </div>
+        <div>
+          <h5>Income</h5>
+          <span id="income">0.00</span>
+        </div>
+        <div>
+          <h5>Expense</h5>
+          <span id="expense">0.00</span>
+        </div>
+      </header>
+
+      <section>
+        <h3>TRANSACTIONS</h3>
+        <ul id="transactionList"></ul>
+        <div id="status"></div>
+      </section>
+
+      <section>
+        <h3>Add Transaction</h3>
+
+        <form action="/track" method="post" id="transactionForm">
+          <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              class="name"
+              id="name"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div>
+            <label for="type">
+              <input type="checkbox" name="type" id="type" />
+              <div class="option">
+                <span>Expense</span>
+                <span>Income</span>
+              </div>
+            </label>
+          </div>
+          <div class="amt">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              class="amount"
+              id="amount"
+              value="0"
+              min="0.01"
+              step="0.01"
+              required
+            />
+          </div>
+          <button type="submit" class="submit" id="submit">Submit</button>
+          <button onclick="deleteTransaction()" class="clear">Clear</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>
